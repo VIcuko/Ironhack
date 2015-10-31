@@ -21,6 +21,7 @@ class ChessBoard
 	end
 
 	def show_board
+		puts ""
 		@board.each do |line|
 			line.each do |field|
 				print "#{field} "
@@ -31,9 +32,9 @@ class ChessBoard
 
 	def position_converter(position)
 		conversion=Array.new(2)
-		position_array=position.split
-		conversion[0]=position_array[0].ord-"a".ord
-		conversion[1]=9-position_array[0].to_i
+		position_array=position.split ("")
+		conversion[0]=position_array[0].ord-"a".ord+1
+		conversion[1]=9-position_array[1].to_i
 		return conversion
-	end	
-end
+	end
+end	

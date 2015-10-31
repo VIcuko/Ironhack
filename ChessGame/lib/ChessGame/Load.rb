@@ -5,14 +5,14 @@ class Load
 	end
 	
 	def load_to_game
-		file_array = load_into_array
+		file_array = load_into_array(@file)
 		convert_to_board(file_array)
 		clean_board
 		return @game_load
 	end
 
-	def load_into_array
-		IO.readlines(@file)
+	def load_into_array(file)
+		IO.readlines(file)
 	end
 
 	def convert_to_board(file_clean)
