@@ -10,7 +10,7 @@ class ChessBoard
 
 	def create_headers
 		@board[0].each_index do |index|
-			index>0 ? (@board[0][index]=(96+index.ord).chr):(@board[0][index]="")
+			index>0 ? (@board[0][index]=" "+(96+index.ord).chr):(@board[0][index]="")
 		end
 	end
 
