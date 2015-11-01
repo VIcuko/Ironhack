@@ -5,6 +5,7 @@ class Game < ChessBoard
 		load=Load.new(file)
 		game_to_load=load.load_to_game
 		overwrite_game(game_to_load)
+		create_pieces
 	end	
 	
 	def overwrite_game(game_to_load)

@@ -8,6 +8,7 @@ class Load
 		file_array = load_into_array(@file)
 		convert_to_board(file_array)
 		clean_board
+		load_pieces
 		return @game_load
 	end
 
@@ -21,7 +22,7 @@ class Load
 		end
 	end
 
-	def clean_board
+	def dispose_board
 		@game_load.each do |line|
 			line.each do |field|
 				field.gsub!(/[\W+]/,' ')
@@ -29,5 +30,27 @@ class Load
 		end
 	end
 
+	def load_pieces
+		@game_load.each_with_index do |line,line_index|
+			line.each_with_index do |field,field_index|
+				case field[1]
+					when "K"
+						piece="King"
+					when "Q"
+						piece="Queen"
+					when "R"
+						piece="Rook"
+					when "B"
+						piece="Bishop"
+					when "N"
+						piece="Knight"
+					when "P"				
+						piece="Pawn"
+					else
+				end
+				@game_load[line_index][field_index]=(eval piece).new(field,field[1])
+			end
+		end
+	end
 
 end

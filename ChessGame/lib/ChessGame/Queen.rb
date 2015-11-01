@@ -1,6 +1,8 @@
 class Queen
-	def initialize
+	def initialize(name="wQ",colour="w")
 		@name="Queen"
+		@colour=colour
+		@board_name=name
 	end
 
 	def validate_move (origin,destiny)

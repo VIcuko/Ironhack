@@ -1,6 +1,8 @@
 class Rook
-	def initialize
+	def initialize(name="wR",colour="w")
 		@name="Rook"
+		@colour=colour
+		@board_name=name
 	end
 
 	def validate_move? (origin,destiny)
