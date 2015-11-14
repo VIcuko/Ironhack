@@ -1,0 +1,15 @@
+<!-- views/main.erb -->
+<!doctype html>
+<html>
+<head>
+  <title>Main | Online Calculator</title>
+</head>
+<body>
+  <h1>Choose operation:</h1>
+ 	<form action="/decide_operation" method="POST">
+		<button type="submit" name="Operation" value="add">Add</button>
+		<button type="submit" name="Operation" value="substract">Substract</button>
+		<button type="submit" name="Operation" value="multiply">Multiply</button>
+		<button type="submit" name="Operation" value="divide">Divide</button>
+	</form>
+</html>

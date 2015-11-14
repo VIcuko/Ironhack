@@ -1,0 +1,36 @@
+<!-- views/add.erb -->
+<!doctype html>
+<html>
+<head>
+  <title>Add | Online Calculator</title>
+</head>
+<body>
+  <h1>Add</h1>
+ 	<form action="/calculate_add" method="POST">
+		<label for="first_value">First value to add:</label>
+		<input type="number" name="first_value" id="first_value" placeholder="Value1"> 
+		<br> +
+		<br>
+		<label for="second_value">Second value to add:</label>
+		<input type="number" name="second_value" id="second_value" placeholder="Value2">
+		<button type="submit">Calculate</button>
+	</form>
+
+<!-- <input type="text">
+<input type="checkbox">
+    <input type="date">
+    <input type="datetime">
+    <input type="email">
+    <input type="file">
+    <input type="hidden">
+    <input type="number">
+    <input type="password">
+    <input type="radio">
+    <input type="tel">
+    <input type="url"> -->
+</body>
+<footer>
+<input type="checkbox" id="terms">
+<label for="terms">You perfectly agree to all of our amazing terms</label>
+</footer>
+</html>

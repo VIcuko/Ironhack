@@ -1,0 +1,19 @@
+<!-- views/multiply.erb -->
+<!doctype html>
+<html>
+<head>
+  <title>Multiply | Online Calculator</title>
+</head>
+<body>
+  <h1>Multiply</h1>
+ 	<form action="/calculate_multiply" method="POST">
+		<label for="first_value">First value to multiply:</label>
+		<input type="number" name="first_value" id="first_value" placeholder="Value1"> 
+		<br> X
+		<br>
+		<label for="second_value">Second value to multiply:</label>
+		<input type="number" name="second_value" id="second_value" placeholder="Value2">
+		<button type="submit">Calculate</button>
+	</form>
+	</body>
+</html>
