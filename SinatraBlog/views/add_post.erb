@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add a post</title>
+</head>
+<body>
+	<div class="container-fluid">
+	<form action="/add_post" method="POST">
+		<div class="form-group">
+			<label for="TITLE">Título:</label>
+			<input id="TITLE" class="form-control" placeholder="Introduce aquí el título del post" name="TITLE">
+		</div>
+		<div class="form-group">			
+			<label for="CONTENT">Contenido:</label>
+			<textarea id="CONTENT" class="form-control" rows="5"placeholder="Introduce aquí el contenido de tu post" name="CONTENT"></textarea>
+		</div>
+		<button type="submit" class="btn btn-success">Publicar</button>
+	</form>
+</body>
+</html>

@@ -1,1 +1,12 @@
-Gemfile
+source 'https://rubygems.org'
+
+gem "sinatra"
+gem 'sinatra-contrib'
+gem "pry"
+gem "spec"
+gem "rspec-core"
+gem 'guard'
+gem 'guard-rspec'
+
+# Specify your gem's dependencies in SinatraBlog.gemspec
+gemspec

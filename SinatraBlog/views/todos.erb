@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <title>Todos</title> 
+  </head>
+  <body>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+    <h1>Welcome to the todo list</h1>
+
+    <% @todos.list_of_todos.each do |todo| %>
+      <li> <%= "#{todo.content} - #{todo.time}" %></li>
+    <% end %>
+    <p>You have: <%= @hours_needed %> of todos left </p>
+ </body>
+</html>
+￼￼
