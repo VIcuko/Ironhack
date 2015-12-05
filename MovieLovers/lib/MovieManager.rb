@@ -19,8 +19,8 @@ class MovieManager
 			if movie.poster.nil? 
 				x+=1 
 			else
+				output = (@search.movies[x].poster)
 				@search.movies.take(x)
-				return @search.movies[x].poster
 			end
 		end
 	end
