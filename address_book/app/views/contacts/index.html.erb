@@ -1,5 +1,11 @@
+<form action="/contacts/new" method="submit">
+	<button>Add new contact</button>
+</form>
+<form action="/contacts/favorite" method="submit">
+	<button>Favorites</button>
+</form>
 <% @contact.each do |contact| %>
-	<h1><%=contact.name %></h1>
+	<h1><%= link_to "#{contact.name}", "contacts/#{contact.id}" %></h1>
 	<h2><%=contact.address %></h2>
 	<h2><%=contact.phone %></h2>
 	<h3><%=contact.email %></h3>

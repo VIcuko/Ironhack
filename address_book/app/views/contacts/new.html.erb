@@ -20,5 +20,12 @@
 		<label for="contact_email">Your Email:</label>
 		<input type="email" name="contact[email]" id="contact_email" placeholder="jbrown@mymail.com">
 	</div>
+	<div for="contact_favorite" class="checkbox">
+    	<label>
+    		<input name="contact[favorite]" type="hidden" value=false>
+      		<input type="checkbox" name="contact[favorite]" id="contact_favorite" value=true> Favorite
+    	</label>
+  	</div>
 	<button type="submit">Add this contact</button>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 </form>
