@@ -1,0 +1,13 @@
+<div class="container-fluid searchbox">
+	<section = "row searchbox">
+		<article class="col-xs-4 col-xs-offset-4 searchcolumn">
+			<%= form_for @link do |l| %>
+				<%= l.label :original_url, "URL to shorten", :id => "search_label" %>
+				<div class="input-group searchbox"><%= l.text_field :original_url, :placeholder =>"http://myurl.com", :class => "form-control" %>
+				<span class="input-group-btn">
+				<%= l.button "Generate url", :class => "btn btn-primary" %>
+				</span>
+				</div>
+			<% end %>
+	</section>
+</div>
