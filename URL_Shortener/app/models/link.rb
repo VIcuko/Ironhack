@@ -1,7 +1,13 @@
 class Link < ActiveRecord::Base
+	validates :original_url, :short_url, presence: true, uniqueness: {case_sensitive: false}
+	validates :original_url, format: {with: /^http[s]?:\/\//}
+
 	def self.find_route(shortlink)
 		longlink = where("short_url=?",shortlink).first
-		longlink = longlink.original_url
+		rescue ActiveRecord::RecordNotFound
+			longlink = nil
+			binding.pry
+		longlink.original_url
 	end
 
 	def self.create_short_url(n)

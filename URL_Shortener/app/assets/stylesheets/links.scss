@@ -10,7 +10,8 @@ body {
 
 #search_label {
 		color: black;
-		font-family: 'Norican', cursive;
+		font-family: 'le-monde-livre-std';
+		font-style: bold;
 		font-size: 30px;
 		text-align: center;
 		text-shadow: 1px 1px white;
@@ -44,6 +45,11 @@ body {
 	position:absolute;
 	top:40%;
 	text-align: center;
+}
+.original_url_label {
+	font-family: 'le-monde-livre-std', 'Norican';
+	font-style: italic;
+	font-size: 30px;
 }
 // Place all the styles related to the links controller here.
 // They will automatically be included in application.css.

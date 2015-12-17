@@ -1,0 +1,16 @@
+<div class="container-fluid searchbox">
+	<section = "row searchbox">
+		<article class="col-xs-4 col-xs-offset-4 searchcolumn">
+			<label class="original_url_label" for="shortened_url"><%=@link.original_url %></label>
+			<div class="form-group">
+   				<div class="input-group">
+      				<div class="input-group-addon">Short url:</div>
+      				<input type="text" class="form-control" id="shortened_url" value=<%="http://localhost:3000/"+@link.short_url%>>
+      				<script>new Clipboard('.btn');</script>
+      				<div class="input-group-addon btn" data-clipboard-target="#shortened_url">Copy</div>
+    			</div>
+		  	</div>
+		  	<a href="/links/new"><button type="submit" class="btn btn-primary">Shorten another url</button></a>
+		</article>
+	</section>
+</div>

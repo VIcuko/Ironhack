@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'links#home'
-  get '/:shortlink' => 'links#reroute'
+  get '/:shortlink' => 'links#reroute', :as => 'reroute'
   resources :links
   
   # The priority is based upon order of creation: first created -> highest priority.

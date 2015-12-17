@@ -6,7 +6,11 @@ class LinksController < ApplicationController
 
 	def reroute
 		longlink=Link.find_route(params[:shortlink])
-		redirect_to "http://"+longlink
+		if longlink.present?
+			redirect_to longlink 
+		else
+			redirect_to "#{new_link_path}"
+		end
 	end
 
 	def new
@@ -15,13 +19,18 @@ class LinksController < ApplicationController
 	end
 
 	def create
+		original_url = params[:link][:original_url]
 		short_url = Link.create_short_url(3)
-		original_url = params[:original_url]
-		@link = Link.new(original_url: original_url , short_url: short_url)
-		@link.save
-		render "show"
+		link = Link.new(original_url: original_url , short_url: short_url)
+		if link.save
+			redirect_to "/links/#{link.id}"	
+		else
+			flash[:alert] = "Something went wrong :( Please try again."
+			render 'new'
+		end		
 	end
 
 	def show
+		@link=Link.find(params[:id])
 	end
 end
