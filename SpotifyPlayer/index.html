@@ -1,9 +1,27 @@
 <html>
 <head>
-	<title></title>
+	<title>Spotify Play</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
+	<section class="container-fluid searchbox" >
+		<div class="row searchbox">
+			<article class="col-xs-4 col-xs-offset-4 searchcolumn">
+				<form name="movie_search" class="searchform">
+					<label for "search1" id="search_label">Search Movie title</label>
+					<div class="input-group searchbox">
+						<input type="text" class="form-control form-search-field" name="movie_search" id="search1" placeholder="Search here...">
+						<span class="input-group-btn">
+						<button type="submit" class="btn btn-default form-search-button"><span class="glyphicon glyphicon-search"></span>
+						</button>
+						</span>
+					</div>
+				</form>
+			</article>
+		</div>
+	</section>
+	<br>
 	<div class="widget">
 		<div class="header">
 		<!-- Try adding/removing these classes: -->
@@ -26,6 +44,7 @@
 
 		<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
 	</div>
-
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="spotify.js"></script>
 </body>
 </html>
