@@ -92,10 +92,28 @@ PokemonApp.PokemonEvolutions = function (id, info) {
 PokemonApp.PokemonEvolutions.prototype.render = function () {
   console.log("Rendering evolutions for: #" + this.id);
   var self = this;
+  var body ="";
   
+  self.info.evolutions.forEach(function(value){
+  	pkmnID="";
+  	for (var i=16;i<value.resource_uri.length-1;i++){
+  		pkmnID+=value.resource_uri[i]
+  	}
+  	body+=("<button class='js-show-evloution-pokemon btn btn-link' data-pokemon-uri='/api/v1/pokemon/'"+value.to+"><h4>"+value.to+"</h4></button>\n"+"<img src=http://pokeapi.co/media/img/"+pkmnID+".png>");
+  });
 
+  $(".js-show-evolution-pokemon").on("click", function (event) {
+    var $button = $(event.currentTarget);
+    var pokemonUri = $button.data("pokemon-uri");
+
+    var pokemon = new PokemonApp.Pokemon(pokemonUri);
+    pokemon.render();
+  });
+ 
+  $("#pokmn-evolutions-body").html(String(body));
 
   $("#pokemon-modal").modal("hide");
+  $("#evolution-modal").modal("show");
   // You will need some AJAX calls!
 };
 
