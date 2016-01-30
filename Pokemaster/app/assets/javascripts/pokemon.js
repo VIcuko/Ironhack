@@ -4,9 +4,9 @@ PokemonApp.Pokemon = function (pokemonUri) {
   this.id = PokemonApp.Pokemon.idFromUri(pokemonUri);
 };
 
-PokemonApp.Pokemon.prototype.render = function () {
-  console.log("Rendering pokemon: #" + this.id);
-};
+// PokemonApp.Pokemon.prototype.render = function () {
+//   console.log("Rendering pokemon: #" + this.id);
+// };
 
 PokemonApp.Pokemon.idFromUri = function (pokemonUri) {
   var uriSegments = pokemonUri.split("/");
@@ -51,33 +51,36 @@ PokemonApp.Pokemon.prototype.render = function () {
       	return value.name;
       }).join(" , "));
 
-      $("#pkmn-description").text(function(){
-      		var arr = self.info.descriptions;
-      		var max = arr[0].name;
-      		var maxIndex = 0;
-      		var description;
+  		var arr = self.info.descriptions;
+  		var max = arr[0].name;
+  		var maxIndex = 0;
 
-      		for (var i=1;i<arr.length;i++){
-      			if (arr[i].name>max){
-      				maxIndex=i;
-      				max=arr[i].name;
-      			}
-      		}
+  		for (var i=1;i<arr.length;i++){
+  			if (arr[i].name>max){
+  				maxIndex=i;
+  				max=arr[i];
+  			}
+  		}
 
-      		var description_uri=max.resource_uri
-      		console.log(description_uri)
-      	$.ajax({
-    		url: description_uri,
-    		success: function (response) {
-    			description = response.description
-    		}
-      	});
-      	console.log(description);
-      	return description
-      })
+  		var description_uri=max.resource_uri
+  		console.log(description_uri)
 
-      $("#pokemon-modal").modal("show");
-    }
+  	$.ajax({
+		url: description_uri,
+		success: function (response) {
+			 $("#pkmn-description").text(response.description);
+		}
+  	});
+
+  	 $("#pkmn-img").html("<img src=http://pokeapi.co/media/img/"+self.info.pkdx_id+".png>");
+
+  	 $("#pkmn-show-evolutions").on("click", function (event) {
+    	  var evolutions = new PokemonApp.PokemonEvolutions(self.info.pkdx_id,self.info);
+    	  evolutions.render();
+  	  });
+
+  	 $("#pokemon-modal").modal("show");
+}
   });
 };
 
@@ -88,7 +91,11 @@ PokemonApp.PokemonEvolutions = function (id, info) {
 
 PokemonApp.PokemonEvolutions.prototype.render = function () {
   console.log("Rendering evolutions for: #" + this.id);
+  var self = this;
+  
 
+
+  $("#pokemon-modal").modal("hide");
   // You will need some AJAX calls!
 };
 
