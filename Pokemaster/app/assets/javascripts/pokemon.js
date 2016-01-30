@@ -28,6 +28,7 @@ $(document).on("ready", function () {
 
 PokemonApp.Pokemon.prototype.render = function () {
   console.log("Rendering pokemon: #" + this.id);
+    $("#evolution-modal").modal("hide");
 
   var self = this;
 
@@ -99,10 +100,10 @@ PokemonApp.PokemonEvolutions.prototype.render = function () {
   	for (var i=16;i<value.resource_uri.length-1;i++){
   		pkmnID+=value.resource_uri[i]
   	}
-  	body+=("<button class='js-show-evloution-pokemon btn btn-link' data-pokemon-uri='/api/v1/pokemon/'"+value.to+"><h4>"+value.to+"</h4></button>\n"+"<img src=http://pokeapi.co/media/img/"+pkmnID+".png>");
+  	body+=("<button id='show-evolution-pokemon' class='btn btn-link' data-pokemon-uri='/api/v1/pokemon/"+pkmnID+"/'><h4>"+value.to+"</h4></button>\n"+"<img src=http://pokeapi.co/media/img/"+pkmnID+".png>");
   });
 
-  $(".js-show-evolution-pokemon").on("click", function (event) {
+  $(".modal-body").on("click", "#show-evolution-pokemon", function (event) {
     var $button = $(event.currentTarget);
     var pokemonUri = $button.data("pokemon-uri");
 
@@ -114,7 +115,6 @@ PokemonApp.PokemonEvolutions.prototype.render = function () {
 
   $("#pokemon-modal").modal("hide");
   $("#evolution-modal").modal("show");
-  // You will need some AJAX calls!
 };
 
 
