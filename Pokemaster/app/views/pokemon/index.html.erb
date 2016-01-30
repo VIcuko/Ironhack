@@ -14,7 +14,7 @@
 
 
 <!-- Pokemon modal view (hidden at first) -->
-<div class="modal fade">
+<div class="modal fade" id="pokemon-modal">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -24,19 +24,37 @@
         </button>
 
         <h3 class="modal-title">
-          <span>Feraligtr</span>
-          <small>#160</small>
+          <span id="pkmn-name">Feraligtr</span>
+          <small id="pkmn-number">#160</small>
         </h3>
       </div><!-- .modal-header -->
 
       <div class="modal-body">
         <dl class="dl-horizontal">
           <dt>Height</dt>
-          <dd>23</dd>
+          <dd id="pkmn-height">23</dd>
 
           <dt>Weight</dt>
-          <dd>888</dd>
+          <dd id="pkmn-weight">888</dd>
+
+          <dt>HP</dt>
+          <dd id="pkmn-hp">888</dd>
+
+          <dt>Attack and Defense</dt>
+          <dd><span id="pkmn-attack">888</span> - <span id="pkmn-defense">999</span></dd>
+
+          <dt>Special Attack & Special Defense</dt>
+          <dd><span id="pkmn-spa">888</span> - <span id="pkmn-spd"</dd>
+
+          <dt>Speed</dt>
+          <dd id="pkmn-speed">888</dd>
+
+          <dt>Types</dt>
+          <dd id="pkmn-types">888</dd>
         </dl>
+
+        <h3>Description</h3>
+        <p id="pkmn-description">This is the description</p>
       </div><!-- .modal-body -->
 
     </div><!-- .modal-content -->
