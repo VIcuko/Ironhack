@@ -1,0 +1,14 @@
+<div class= "container-fluid">
+	<section>
+		<%= form_for @Post do |p| %>
+			<%= p.label :title, "Title", :id => "title" %>
+			<%= p.text_field :title, :placeholder =>"Title", :class => "form-control" %>
+			<%= p.label :gif, "Gif", :id => "gif" %>
+			<%= p.text_field :gif, :placeholder =>"myGif", :class => "form-control" %>
+			<br>
+					<span class="input-group-btn">
+						<%= p.button "Submit", :class => "btn btn-primary" %>
+					</span>
+			<% end %>
+	</section>
+</div>
